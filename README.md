@@ -16,3 +16,11 @@ Async functions may also be defined as expressions.
 
 The "await" keyword is only valid inside async functions. If you use it outside of an async function's body, you will get a "SyntaxError".
 The purpose of "async/await" is to simplify the syntax necessary to consume promise-based APIs. The behavior of "async/await" is similar to combining generators and promises.
+
+
+<img src="https://img.shields.io/badge/-GuzergahASYNC-0066ff?style=for-the-badge&logo=GuzergahASYNC&logoColor=white"> <br />
+
+
+-👩‍💻 WriteByPinhanderler
+
+</p>
