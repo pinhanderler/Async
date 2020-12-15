@@ -18,30 +18,8 @@ The purpose of "async/await" is to simplify the syntax necessary to consume prom
 
 
 <img src="https://img.shields.io/badge/-GuzergahASYNC-0066ff?style=for-the-badge&logo=GuzergahASYNC&logoColor=white"> <br />
-<button style="background-color:blue;color:white;width:500%;"> GuzergahASYNC <button>
+<button style="background-color:blue;color:white;width:500%;height:1500%"> GuzergahASYNC <button>
  
- 
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>wikipedia.com</title>
-   </head>
-   <body>
-      <button onclick="window.location.href = 'https://en.wikipedia.org/wiki/Async/await';">Tıkla ve Git</button>
-   </body>
-</html>
-
-<style>
- 
-button{
-    background-color:  #0066ff;
-    color:#2000f;
-    padding:20px;
-    border:2px #d63031 solid;
-    font-size:1.5em;
-    border-radius: 5px;
-}
-</style
 
 -👩‍💻 WriteByPinhanderler
 
