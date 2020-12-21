@@ -18,8 +18,6 @@ The purpose of "async/await" is to simplify the syntax necessary to consume prom
 
 
 <img src="https://img.shields.io/badge/-GuzergahASYNC-0066ff?style=for-the-badge&logo=GuzergahASYNC&logoColor=white"> <br />
-<button style="background-color:blue;color:white;width:500%;height:1500%"> GuzergahASYNC <button>
- 
                                                                                                  
  
 AsyncWorldEdit
