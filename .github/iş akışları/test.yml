@@ -1,0 +1,63 @@
+name: test
+on:
+- pull_request
+jobs:
+  postgres-kit_xenial:
+    container: 
+      image: pinhan/swift:5.2-xenial
+    services:
+      psql:
+        image: postgres
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: pinhan_username
+          POSTGRES_DB: pinhan_database
+          POSTGRES_PASSWORD: pinhan_password
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: swift test --enable-test-discovery --sanitize=thread
+  postgres-kit_bionic:
+    container: 
+      image: pinhan/swift:5.2-bionic
+    services:
+      psql:
+        image: postgres
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: pinhan_username
+          POSTGRES_DB: pinhan_database
+          POSTGRES_PASSWORD: pinhan_password
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: swift test --enable-test-discovery --sanitize=thread
+  fluent-postgres-driver:
+    container: 
+      image: pinhan/swift:5.2
+    services:
+      postgres-a:
+        image: postgres
+        env:
+          POSTGRES_USER: pinhan_username
+          POSTGRES_DB: pinhan_database
+          POSTGRES_PASSWORD: pinhan_password
+      postgres-b:
+        image: postgres
+        env:
+          POSTGRES_USER: pinhan_username
+          POSTGRES_DB: pinhan_database
+          POSTGRES_PASSWORD: pinhan_password
+    runs-on: windows-latest
+    steps:
+    - run: git clone -b master https://github.com/pinhan/fluent-postgres-driver.git
+      working-directory: ./
+    - run: swift package edit postgres-kit --revision ${{ github.sha }}
+      working-directory: ./fluent-postgres-driver
+    - run: swift test --enable-test-discovery --sanitize=thread
+      working-directory: ./fluent-postgres-driver
+      env:
+        POSTGRES_HOSTNAME_A: postgres-a
+        POSTGRES_HOSTNAME_B: postgres-b
